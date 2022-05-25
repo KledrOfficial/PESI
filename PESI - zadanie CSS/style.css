@@ -1,0 +1,45 @@
+@media screen and (min-width: 350px) {
+  .square {
+    width: 370px;
+    height: 375px;
+    background: rgb(162, 202, 60);
+    background: linear-gradient(
+      90deg,
+      rgba(162, 202, 60, 1) 0%,
+      rgba(10, 124, 255, 1) 35%,
+      rgba(162, 202, 60, 1) 100%
+    );
+    position: relative;
+  }
+  .square:before {
+    content: "";
+    width: 350px;
+    height: 350px;
+    background-image: url("https://pesi.pl/img/main-bg.jpg");
+    background-position: center;
+    /* Scale image to height 350 width with default aspect ratio  */
+    background-size: 600px 350px;
+    background-repeat: no-repeat;
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 10px;
+  }
+  .square,
+  .square:before {
+    -webkit-clip-path: polygon(0 10%, 100% 33%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 10%, 100% 33%, 100% 100%, 0% 100%);
+  }
+}
+@media screen and (min-width: 700px) {
+  .square {
+    width: 520px;
+    height: 525px;
+  }
+  .square:before {
+    width: 500px;
+    height: 500px;
+    /* Scale image to height 500 width with default aspect ratio  */
+    background-size: 857px 500px;
+  }
+}
